@@ -14,8 +14,10 @@ public class Commande {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long produitId;
     private Long utilisateurId;
     private Double montant;
+    private int quantite;
     private String statut; // Ex: EN_ATTENTE, EN_COURS, LIVREE, ANNULEE
     private Date dateCreation;
 
@@ -27,6 +29,12 @@ public class Commande {
     }
     public Long getUtilisateurId() {
         return utilisateurId;
+    }
+    public Long getProduitId() {
+        return produitId;
+    }
+    public void setProduitId(Long produitId) {
+        this.produitId = produitId;
     }
     public void setUtilisateurId(Long utilisateurId) {
         this.utilisateurId = utilisateurId;
@@ -42,6 +50,12 @@ public class Commande {
     }
     public void setStatut(String statut) {
         this.statut = statut;
+    }
+    public int getQuantite() {
+        return quantite;
+    }
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
     }
     public Date getDateCreation() {
         return dateCreation;

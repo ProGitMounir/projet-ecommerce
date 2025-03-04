@@ -3,11 +3,15 @@ package com.ecommerce.produit.service_produit.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ecommerce.produit.service_produit.config.RabbitMQConfig;
 import com.ecommerce.produit.service_produit.model.Produit;
 import com.ecommerce.produit.service_produit.repository.ProduitRepository;
+
+import main.java.com.projetecommerce.common.messaging.StockUpdateMessage;
 
 @Service
 public class ProduitService {
@@ -50,6 +54,10 @@ public class ProduitService {
     public List<Produit> listerProduits() {
         return produitRepository.findAll();
     }
+    public List<Produit> listerProduitsDisponibles() {
+        return produitRepository.findByDisponibleTrue();
+    }
+    
 
     public Produit getProduitById(Long id) {
         return produitRepository.findById(id).orElse(null);
@@ -59,7 +67,21 @@ public class ProduitService {
         Produit produit = produitRepository.findById(id).orElse(null);
         if (produit != null) {
             produit.setStock(produit.getStock() + quantite);
+            produit.setDisponible(produit.getStock() > 0); // Met à jour la disponibilité
             produitRepository.save(produit);
         }
     }
+    @RabbitListener(queues = RabbitMQConfig.QUEUE_NAME)
+    public void mettreAJourStock(StockUpdateMessage message) {
+        Produit produit = produitRepository.findById(message.getProduitId()).orElse(null);
+        if (produit != null && produit.getStock() >= message.getQuantite()) {
+            produit.setStock(produit.getStock() - message.getQuantite());
+            produit.setDisponible(produit.getStock() > 0);
+            produitRepository.save(produit);
+            System.out.println("Stock mis à jour pour le produit ID: " + message.getProduitId());
+        } else {
+            System.out.println("Stock insuffisant pour le produit ID: " + message.getProduitId());
+        }
+    }
+    
 }

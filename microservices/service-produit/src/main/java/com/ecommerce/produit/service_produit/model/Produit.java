@@ -13,6 +13,7 @@ public class Produit {
     private String categorie;
     private Double prix;
     private Integer stock;
+    private boolean disponible;
 
     // Getters
     public Long getId() {
@@ -30,6 +31,9 @@ public class Produit {
     public Integer getStock() {
         return stock;
     }
+    public boolean isDisponible() {
+        return disponible;
+    }
 
     // Setters
     public void setNom(String nom) {
@@ -43,7 +47,9 @@ public class Produit {
     }
     public void setStock(Integer stock) {
         this.stock = stock;
-    } 
-    
-
+        this.disponible = stock > 0; // Met à jour la disponibilité
+    }
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
 }

@@ -43,6 +43,11 @@ public class ProduitController {
         return produitService.listerProduits();
     }
 
+    @GetMapping("/disponibles")
+    public List<Produit> getProduitsDisponibles() {
+        return produitService.listerProduitsDisponibles();
+    }
+
     @GetMapping("/{id}")
     public Produit getProduitById(@PathVariable Long id) {
         return produitService.getProduitById(id);
