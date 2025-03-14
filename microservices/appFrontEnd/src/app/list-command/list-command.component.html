@@ -1,0 +1,44 @@
+<div class="command-list-container">
+  <h2>Liste des commandes :</h2>
+  <table class="command-table">
+    <thead>
+      <tr>
+        <th>Référence produit</th>
+        <th>Référence utilisateur</th>
+        <th>Quantité</th>
+        <th>Prix Total</th>
+        <th>Statut</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let commande of commandeList">
+        <td>{{ commande.produitId }}</td>
+        <td>{{ commande.utilisateurId }}</td>
+        <td>{{ commande.quantite }}</td>
+        <td>{{ commande.prixTotal  | dhCurrency }}</td>
+        <td>
+          <span [ngClass]="{
+            'status-pending': commande.statut === 'EN_ATTENTE',
+            'status-validated': commande.statut === 'VALIDE'
+          }">
+            {{ commande.statut }}
+          </span>
+        </td>
+        <td>
+          <button
+            *ngIf="commande.statut === 'EN_ATTENTE'"
+            class="btn btn-validate"
+            (click)="validerCommande(commande.id)"
+          >
+            Valider
+          </button>
+          <span *ngIf="commande.statut === 'VALIDE'">Validée</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="commandeList.length === 0" class="empty-message">
+    Aucune commande disponible.
+  </div>
+</div>

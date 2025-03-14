@@ -1,0 +1,104 @@
+2025-03-14T20:36:46.865Z  INFO 14195 --- [commande-service] [restartedMain] c.e.c.CommandeServiceApplication         : Starting CommandeServiceApplication using Java 23.0.1 with PID 14195 (/home/hp/workspace/projet-ecommerce/microservices/commande-service/target/classes started by hp in /home/hp/workspace/projet-ecommerce/microservices/commande-service)
+2025-03-14T20:36:46.867Z DEBUG 14195 --- [commande-service] [restartedMain] c.e.c.CommandeServiceApplication         : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-14T20:36:46.868Z  INFO 14195 --- [commande-service] [restartedMain] c.e.c.CommandeServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-14T20:36:46.941Z  INFO 14195 --- [commande-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-14T20:36:46.941Z  INFO 14195 --- [commande-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-14T20:36:47.773Z  INFO 14195 --- [commande-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-14T20:36:47.909Z  INFO 14195 --- [commande-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 127 ms. Found 1 JPA repository interface.
+2025-03-14T20:36:48.228Z  INFO 14195 --- [commande-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b45f5af5-4826-3ff3-b931-24622398cf65
+2025-03-14T20:36:48.747Z  INFO 14195 --- [commande-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-03-14T20:36:48.763Z  INFO 14195 --- [commande-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-14T20:36:48.764Z  INFO 14195 --- [commande-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-14T20:36:48.801Z  INFO 14195 --- [commande-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-14T20:36:48.802Z  INFO 14195 --- [commande-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1860 ms
+2025-03-14T20:36:49.000Z  INFO 14195 --- [commande-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-14T20:36:49.042Z  INFO 14195 --- [commande-service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-14T20:36:49.069Z  INFO 14195 --- [commande-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-14T20:36:49.329Z  INFO 14195 --- [commande-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-14T20:36:49.354Z  INFO 14195 --- [commande-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-14T20:36:49.783Z  INFO 14195 --- [commande-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@565f7942
+2025-03-14T20:36:49.785Z  INFO 14195 --- [commande-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-14T20:36:49.833Z  WARN 14195 --- [commande-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-14T20:36:49.834Z  WARN 14195 --- [commande-service] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-03-14T20:36:49.849Z  INFO 14195 --- [commande-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-14T20:36:50.657Z  INFO 14195 --- [commande-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-14T20:36:50.675Z DEBUG 14195 --- [commande-service] [restartedMain] org.hibernate.SQL                        : drop table if exists commande
+2025-03-14T20:36:50.701Z DEBUG 14195 --- [commande-service] [restartedMain] org.hibernate.SQL                        : create table commande (prix_total float(53) not null, quantite integer not null, id bigint not null auto_increment, produit_id bigint, utilisateur_id bigint, statut varchar(255), primary key (id)) engine=InnoDB
+2025-03-14T20:36:50.733Z  INFO 14195 --- [commande-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-14T20:36:51.189Z  WARN 14195 --- [commande-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-14T20:36:51.266Z  WARN 14195 --- [commande-service] [restartedMain] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2025-03-14T20:36:51.402Z  INFO 14195 --- [commande-service] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2025-03-14T20:36:51.979Z  WARN 14195 --- [commande-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-03-14T20:36:52.108Z  INFO 14195 --- [commande-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-03-14T20:36:52.152Z  WARN 14195 --- [commande-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-03-14T20:36:52.182Z  INFO 14195 --- [commande-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-03-14T20:36:52.208Z  INFO 14195 --- [commande-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-03-14T20:36:52.212Z  INFO 14195 --- [commande-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-03-14T20:36:52.221Z  INFO 14195 --- [commande-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-03-14T20:36:52.221Z  INFO 14195 --- [commande-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-03-14T20:36:52.221Z  INFO 14195 --- [commande-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-03-14T20:36:52.222Z  INFO 14195 --- [commande-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-03-14T20:36:52.222Z  INFO 14195 --- [commande-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-03-14T20:36:52.222Z  INFO 14195 --- [commande-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-03-14T20:36:52.222Z  INFO 14195 --- [commande-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-03-14T20:36:52.526Z  INFO 14195 --- [commande-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-03-14T20:36:52.527Z  INFO 14195 --- [commande-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-03-14T20:36:52.530Z  INFO 14195 --- [commande-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-03-14T20:36:52.532Z  INFO 14195 --- [commande-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1741984612531 with initial instances count: 0
+2025-03-14T20:36:52.536Z  INFO 14195 --- [commande-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application COMMANDE-SERVICE with eureka with status UP
+2025-03-14T20:36:52.537Z  INFO 14195 --- [commande-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1741984612536, current=UP, previous=STARTING]
+2025-03-14T20:36:52.538Z  INFO 14195 --- [commande-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMANDE-SERVICE/192.168.11.105:commande-service:8082: registering service...
+2025-03-14T20:36:52.552Z  INFO 14195 --- [commande-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-03-14T20:36:52.553Z  INFO 14195 --- [commande-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2025-03-14T20:36:52.577Z  INFO 14195 --- [commande-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMANDE-SERVICE/192.168.11.105:commande-service:8082 - registration status: 204
+2025-03-14T20:36:52.706Z  INFO 14195 --- [commande-service] [restartedMain] c.e.c.CommandeServiceApplication         : Started CommandeServiceApplication in 6.456 seconds (process running for 7.373)
+2025-03-14T20:36:54.536Z  INFO 14195 --- [commande-service] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-14T20:36:54.536Z  INFO 14195 --- [commande-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-14T20:36:54.537Z  INFO 14195 --- [commande-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-14T20:36:54.823Z  INFO 14195 --- [commande-service] [http-nio-8082-exec-2] c.e.c.controller.CommandeController      : Listing all commands
+2025-03-14T20:36:54.906Z DEBUG 14195 --- [commande-service] [http-nio-8082-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.prix_total,c1_0.produit_id,c1_0.quantite,c1_0.statut,c1_0.utilisateur_id from commande c1_0
+2025-03-14T20:37:22.528Z  INFO 14195 --- [commande-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-03-14T20:37:22.529Z  INFO 14195 --- [commande-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-03-14T20:37:22.529Z  INFO 14195 --- [commande-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-03-14T20:37:22.530Z  INFO 14195 --- [commande-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-03-14T20:37:22.530Z  INFO 14195 --- [commande-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-03-14T20:37:22.530Z  INFO 14195 --- [commande-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2025-03-14T20:37:22.531Z  INFO 14195 --- [commande-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-03-14T20:37:22.579Z  INFO 14195 --- [commande-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-03-14T20:38:04.950Z  INFO 14195 --- [commande-service] [http-nio-8082-exec-5] c.e.c.controller.CommandeController      : Creating a new command for product ID: 2
+2025-03-14T20:38:05.165Z  INFO 14195 --- [commande-service] [http-nio-8082-exec-5] c.e.c.controller.CommandeController      : Command created successfully with ID: null
+2025-03-14T20:38:05.191Z DEBUG 14195 --- [commande-service] [http-nio-8082-exec-5] org.hibernate.SQL                        : insert into commande (prix_total,produit_id,quantite,statut,utilisateur_id) values (?,?,?,?,?)
+2025-03-14T20:38:07.090Z  INFO 14195 --- [commande-service] [http-nio-8082-exec-6] c.e.c.controller.CommandeController      : Listing all commands
+2025-03-14T20:38:07.092Z DEBUG 14195 --- [commande-service] [http-nio-8082-exec-6] org.hibernate.SQL                        : select c1_0.id,c1_0.prix_total,c1_0.produit_id,c1_0.quantite,c1_0.statut,c1_0.utilisateur_id from commande c1_0
+2025-03-14T20:38:12.188Z  INFO 14195 --- [commande-service] [http-nio-8082-exec-7] c.e.c.controller.CommandeController      : Listing all commands
+2025-03-14T20:38:12.190Z DEBUG 14195 --- [commande-service] [http-nio-8082-exec-7] org.hibernate.SQL                        : select c1_0.id,c1_0.prix_total,c1_0.produit_id,c1_0.quantite,c1_0.statut,c1_0.utilisateur_id from commande c1_0
+2025-03-14T20:38:13.244Z  INFO 14195 --- [commande-service] [http-nio-8082-exec-9] c.e.c.controller.CommandeController      : Validating command with ID: 1
+2025-03-14T20:38:13.252Z DEBUG 14195 --- [commande-service] [http-nio-8082-exec-9] org.hibernate.SQL                        : select c1_0.id,c1_0.prix_total,c1_0.produit_id,c1_0.quantite,c1_0.statut,c1_0.utilisateur_id from commande c1_0 where c1_0.id=?
+2025-03-14T20:38:13.576Z  INFO 14195 --- [commande-service] [http-nio-8082-exec-9] c.e.c.controller.CommandeController      : Command with ID: 1 validated successfully
+2025-03-14T20:38:13.585Z DEBUG 14195 --- [commande-service] [http-nio-8082-exec-9] org.hibernate.SQL                        : update commande set prix_total=?,produit_id=?,quantite=?,statut=?,utilisateur_id=? where id=?
+2025-03-14T20:38:15.223Z  INFO 14195 --- [commande-service] [http-nio-8082-exec-10] c.e.c.controller.CommandeController      : Listing all commands
+2025-03-14T20:38:15.225Z DEBUG 14195 --- [commande-service] [http-nio-8082-exec-10] org.hibernate.SQL                        : select c1_0.id,c1_0.prix_total,c1_0.produit_id,c1_0.quantite,c1_0.statut,c1_0.utilisateur_id from commande c1_0
+2025-03-14T20:38:30.850Z  INFO 14195 --- [commande-service] [http-nio-8082-exec-2] c.e.c.controller.CommandeController      : Listing commands for user ID: 1
+2025-03-14T20:38:30.871Z DEBUG 14195 --- [commande-service] [http-nio-8082-exec-2] org.hibernate.SQL                        : select c1_0.id,c1_0.prix_total,c1_0.produit_id,c1_0.quantite,c1_0.statut,c1_0.utilisateur_id from commande c1_0 where c1_0.utilisateur_id=?
+2025-03-14T20:38:37.820Z  INFO 14195 --- [commande-service] [http-nio-8082-exec-3] c.e.c.controller.CommandeController      : Listing all commands
+2025-03-14T20:38:37.822Z DEBUG 14195 --- [commande-service] [http-nio-8082-exec-3] org.hibernate.SQL                        : select c1_0.id,c1_0.prix_total,c1_0.produit_id,c1_0.quantite,c1_0.statut,c1_0.utilisateur_id from commande c1_0
+2025-03-14T20:39:04.084Z  INFO 14195 --- [commande-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application COMMANDE-SERVICE with eureka with status DOWN
+2025-03-14T20:39:04.084Z  INFO 14195 --- [commande-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1741984744084, current=DOWN, previous=UP]
+2025-03-14T20:39:04.087Z  INFO 14195 --- [commande-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-14T20:39:04.088Z  INFO 14195 --- [commande-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMANDE-SERVICE/192.168.11.105:commande-service:8082: registering service...
+2025-03-14T20:39:04.089Z  INFO 14195 --- [commande-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-14T20:39:04.096Z  INFO 14195 --- [commande-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMANDE-SERVICE/192.168.11.105:commande-service:8082 - registration status: 204
+2025-03-14T20:39:04.103Z  INFO 14195 --- [commande-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-14T20:39:04.107Z  INFO 14195 --- [commande-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-14T20:39:04.117Z  INFO 14195 --- [commande-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-14T20:39:04.118Z  INFO 14195 --- [commande-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-03-14T20:39:07.119Z  INFO 14195 --- [commande-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-03-14T20:39:07.134Z  INFO 14195 --- [commande-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMANDE-SERVICE/192.168.11.105:commande-service:8082 - deregister  status: 200
+2025-03-14T20:39:07.135Z  INFO 14195 --- [commande-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

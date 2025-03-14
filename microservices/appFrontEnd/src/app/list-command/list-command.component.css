@@ -1,0 +1,102 @@
+/* Conteneur principal */
+.command-list-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre */
+.command-list-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Tableau des commandes */
+.command-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.command-table th,
+.command-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.command-table th {
+    background-color: #007bff; /* Bleu pour les en-têtes */
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.command-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.command-table tr:hover {
+    background-color: #e9f5ff;
+    transition: background-color 0.3s ease;
+}
+
+/* Bouton Valider */
+.btn-validate {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #28a745; /* Vert pour le bouton Valider */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn-validate:hover {
+    background-color: #218838; /* Vert plus foncé au survol */
+}
+
+/* Styles pour les statuts */
+.status-pending {
+    color: #dc3545; /* Rouge pour EN_ATTENTE */
+    font-weight: bold;
+}
+
+.status-validated {
+    color: #28a745; /* Vert pour VALIDE */
+    font-weight: bold;
+}
+
+/* Message si aucune commande */
+.empty-message {
+    text-align: center;
+    color: #777;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .command-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .command-table th,
+    .command-table td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .btn-validate {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}

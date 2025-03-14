@@ -1,0 +1,18 @@
+<div class="create-command-container">
+    <h2>Créer une Commande</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="produitId">ID du Produit:</label>
+        <input type="number" id="produitId" [(ngModel)]="commande.produitId" name="produitId" required>
+      </div>
+      <div class="form-group">
+        <label for="utilisateurId">ID de l'Utilisateur:</label>
+        <input type="number" id="utilisateurId" [(ngModel)]="commande.utilisateurId" name="utilisateurId" required>
+      </div>
+      <div class="form-group">
+        <label for="quantite">Quantité:</label>
+        <input type="number" id="quantite" [(ngModel)]="commande.quantite" name="quantite" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Commander</button>
+    </form>
+  </div>

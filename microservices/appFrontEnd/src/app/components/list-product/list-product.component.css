@@ -1,0 +1,142 @@
+/* Conteneur principal */
+.product-list-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteneur des filtres */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Espacement entre les groupes de filtres */
+  margin-bottom: 20px;
+}
+
+/* Groupe de filtres */
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacement entre les éléments d'un groupe */
+}
+
+/* Styles pour les labels */
+.filter-group label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styles pour les champs de formulaire */
+.filter-group .form-control {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 150px;
+  transition: border-color 0.3s ease;
+}
+
+.filter-group .form-control:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Styles pour les boutons */
+.btn-availability, .btn-price {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-availability {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.btn-availability:hover {
+  background-color: #138496;
+}
+
+.btn-price {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-price:hover {
+  background-color: #218838;
+}
+
+/* Titre */
+.product-list-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* Tableau des produits */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.product-table th {
+  background-color: #007bff;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.product-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.product-table tr:hover {
+  background-color: #e9f5ff;
+  transition: background-color 0.3s ease;
+}
+
+/* Message si aucun produit */
+.empty-message {
+  text-align: center;
+  color: #777;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filter-container {
+      flex-direction: column;
+      align-items: stretch;
+  }
+
+  .filter-group {
+      flex-direction: column;
+      align-items: stretch;
+  }
+
+  .filter-group .form-control, .filter-group button {
+      width: 100%;
+  }
+
+  .filter-group label {
+      margin-bottom: 5px;
+  }
+}

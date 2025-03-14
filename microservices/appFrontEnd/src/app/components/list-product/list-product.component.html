@@ -1,0 +1,65 @@
+<div class="product-list-container">
+  <!-- Filtres -->
+  <div class="filter-container">
+    <!-- Filtre par catégorie -->
+    <div class="filter-group">
+      <label for="categorySelect">Catégorie :</label>
+      <select
+        id="categorySelect"
+        class="form-control" [(ngModel)]="selectedCategoryId" (change)="onCategoryChange()"
+      >
+        <option value="">Toutes les catégories</option>
+        <option *ngFor="let categorie of categorieList" [value]="categorie.id">
+          {{ categorie.nom }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Filtre par disponibilité -->
+    <div class="filter-group">
+      <button id="availabilityFilter" class="btn btn-availability" (click)="filterByAvailability()">
+        Afficher les produits disponibles
+      </button>
+    </div>
+
+    <!-- Filtre par prix -->
+    <div class="filter-group">
+      <input
+        id="priceFilter"
+        type="number"
+        class="form-control"
+        [(ngModel)]="selectedMaxPrice"
+        placeholder="Prix maximum"
+      />
+      <button class="btn btn-price" (click)="filterByPrice()">Filtrer</button>
+    </div>
+  </div>
+
+  <!-- Titre de la liste -->
+  <h2>Liste des Produits :</h2>
+
+  <!-- Tableau des produits -->
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Référence</th>
+        <th>Description</th>
+        <th>Stock</th>
+        <th>Prix à l'unité</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produit of produitList">
+        <td>{{ produit.id }}</td>
+        <td>{{ produit.nom }}</td>
+        <td>{{ produit.stock }}</td>
+        <td>{{ produit.prixUnitaire | dhCurrency }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Message si aucun produit -->
+  <div *ngIf="produitList.length === 0" class="empty-message">
+    Aucun produit disponible pour cette catégorie.
+  </div>
+</div>
